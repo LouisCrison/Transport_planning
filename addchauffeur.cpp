@@ -1,14 +1,14 @@
 #include "addchauffeur.h"
 #include "ui_addchauffeur.h"
 
-addChauffeur::addChauffeur(QWidget *parent) :
+AddChauffeur::AddChauffeur(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::addChauffeur)
+    ui(new Ui::AddChauffeur)
 {
     ui->setupUi(this);
 }
 
-addChauffeur::~addChauffeur()
+AddChauffeur::~AddChauffeur()
 {
     delete ui;
 }

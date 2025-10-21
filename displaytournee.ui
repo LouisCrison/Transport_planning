@@ -1,6 +1,6 @@
 <ui version="4.0">
- <class>AddChauffeur</class>
- <widget class="QDialog" name="AddChauffeur">
+ <class>DisplayTournee</class>
+ <widget class="QDialog" name="DisplayTournee">
   <property name="geometry">
    <rect>
     <x>0</x>
