@@ -35,6 +35,18 @@ if(ANDROID)
     addchauffeur.cpp
     addchauffeur.h
     addchauffeur.ui
+    displaychauffeurs.cpp
+    displaychauffeurs.h
+    displaychauffeurs.ui
+    displaycamions.cpp
+    displaycamions.h
+    displaycamions.ui
+    displaytournee.cpp
+    displaytournee.h
+    displaytournee.ui
+    addtournee.cpp
+    addtournee.h
+    addtournee.ui
   )
 else()
   add_executable(Transport_planning
@@ -45,6 +57,18 @@ else()
     addchauffeur.cpp
     addchauffeur.h
     addchauffeur.ui
+    displaychauffeurs.cpp
+    displaychauffeurs.h
+    displaychauffeurs.ui
+    displaycamions.cpp
+    displaycamions.h
+    displaycamions.ui
+    displaytournee.cpp
+    displaytournee.h
+    displaytournee.ui
+    addtournee.cpp
+    addtournee.h
+    addtournee.ui
   )
 endif()
 

@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DisplayCamions</class>
- <widget class="QDialog" name="DisplayCamions">
+ <class>DisplayChauffeurs</class>
+ <widget class="QDialog" name="DisplayChauffeurs">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>764</width>
-    <height>506</height>
+    <width>751</width>
+    <height>517</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Camions</string>
+   <string>Chauffeurs</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="QLabel" name="dispCamionsLabel">
+    <widget class="QLabel" name="label">
      <property name="font">
       <font>
        <pointsize>20</pointsize>
        <weight>75</weight>
+       <italic>false</italic>
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel
+{
+font-size:20pt;
+font:bold
+}</string>
+     </property>
      <property name="text">
-      <string>Liste camions</string>
+      <string>Liste des chauffeurs</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -32,7 +43,11 @@
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QTableView" name="dispCamionsTable"/>
+    <widget class="QTableView" name="chauffTable">
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+    </widget>
    </item>
    <item row="1" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -43,14 +58,20 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="addCamionBtn">
+      <widget class="QPushButton" name="AddButton">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
-        <string>Ajouter</string>
+        <string>Ajouter </string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="dltCamionBtn">
+      <widget class="QPushButton" name="DeleteButton">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>Supprimer</string>
        </property>

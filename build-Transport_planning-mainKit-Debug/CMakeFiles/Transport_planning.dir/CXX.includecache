@@ -9,16 +9,72 @@
 /home/louis/Transport_planning/addchauffeur.h
 QDialog
 -
-
-/home/louis/Transport_planning/mainwindow.cpp
+QSqlQuery
+-
+QDebug
+-
+QString
+-
+QMainWindow
+-
 mainwindow.h
 /home/louis/Transport_planning/mainwindow.h
-ui_mainwindow.h
-/home/louis/Transport_planning/ui_mainwindow.h
-addchauffeur.h
-/home/louis/Transport_planning/addchauffeur.h
+
+/home/louis/Transport_planning/addtournee.h
+mainwindow.h
+/home/louis/Transport_planning/mainwindow.h
+QDialog
+-
+QSql
+-
+QSqlQuery
+-
+QDebug
+-
+
+/home/louis/Transport_planning/displaycamions.h
+QDialog
+-
+
+/home/louis/Transport_planning/displaychauffeurs.cpp
+displaychauffeurs.h
+/home/louis/Transport_planning/displaychauffeurs.h
+ui_displaychauffeurs.h
+/home/louis/Transport_planning/ui_displaychauffeurs.h
+
+/home/louis/Transport_planning/displaychauffeurs.h
+mainwindow.h
+/home/louis/Transport_planning/mainwindow.h
+QDialog
+-
+QSqlDatabase
+-
+QSqlTableModel
+-
+
+/home/louis/Transport_planning/displaytournee.h
+mainwindow.h
+/home/louis/Transport_planning/mainwindow.h
+addtournee.h
+/home/louis/Transport_planning/addtournee.h
+QDialog
+-
+QSqlDatabase
+-
+QDebug
+-
+QSqlTableModel
+-
 
 /home/louis/Transport_planning/mainwindow.h
+addchauffeur.h
+/home/louis/Transport_planning/addchauffeur.h
+displaychauffeurs.h
+/home/louis/Transport_planning/displaychauffeurs.h
+displaycamions.h
+/home/louis/Transport_planning/displaycamions.h
+displaytournee.h
+/home/louis/Transport_planning/displaytournee.h
 iostream
 -
 string
@@ -37,6 +93,12 @@ QSqlError
 -
 QString
 -
+QDate
+-
+
+/home/louis/anaconda3/include/qt/QtCore/QDate
+qdatetime.h
+/home/louis/anaconda3/include/qt/QtCore/qdatetime.h
 
 /home/louis/anaconda3/include/qt/QtCore/QDebug
 qdebug.h
@@ -182,6 +244,16 @@ QtCore/qscopedpointer.h
 QtCore/qiodevice.h
 -
 QtCore/qpair.h
+-
+
+/home/louis/anaconda3/include/qt/QtCore/qdatetime.h
+QtCore/qstring.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qshareddata.h
+-
+limits
 -
 
 /home/louis/anaconda3/include/qt/QtCore/qdebug.h
@@ -1100,6 +1172,10 @@ QtGui/qwindowdefs_win.h
 QtGui/qtguiglobal.h
 -
 
+/home/louis/anaconda3/include/qt/QtSql/QSql
+qtsqlglobal.h
+/home/louis/anaconda3/include/qt/QtSql/qtsqlglobal.h
+
 /home/louis/anaconda3/include/qt/QtSql/QSqlDatabase
 qsqldatabase.h
 /home/louis/anaconda3/include/qt/QtSql/qsqldatabase.h
@@ -1111,6 +1187,10 @@ qsqlerror.h
 /home/louis/anaconda3/include/qt/QtSql/QSqlQuery
 qsqlquery.h
 /home/louis/anaconda3/include/qt/QtSql/qsqlquery.h
+
+/home/louis/anaconda3/include/qt/QtSql/QSqlTableModel
+qsqltablemodel.h
+/home/louis/anaconda3/include/qt/QtSql/qsqltablemodel.h
 
 /home/louis/anaconda3/include/qt/QtSql/qsqldatabase.h
 QtSql/qtsqlglobal.h
@@ -1130,6 +1210,22 @@ QtSql/qtsqlglobal.h
 QtSql/qsqldatabase.h
 -
 QtCore/qstring.h
+-
+
+/home/louis/anaconda3/include/qt/QtSql/qsqlquerymodel.h
+QtSql/qtsqlglobal.h
+-
+QtCore/qabstractitemmodel.h
+-
+QtSql/qsqldatabase.h
+-
+
+/home/louis/anaconda3/include/qt/QtSql/qsqltablemodel.h
+QtSql/qtsqlglobal.h
+-
+QtSql/qsqldatabase.h
+-
+QtSql/qsqlquerymodel.h
 -
 
 /home/louis/anaconda3/include/qt/QtSql/qtsqlglobal.h
@@ -1160,13 +1256,13 @@ qgridlayout.h
 qheaderview.h
 /home/louis/anaconda3/include/qt/QtWidgets/qheaderview.h
 
+/home/louis/anaconda3/include/qt/QtWidgets/QLabel
+qlabel.h
+/home/louis/anaconda3/include/qt/QtWidgets/qlabel.h
+
 /home/louis/anaconda3/include/qt/QtWidgets/QMainWindow
 qmainwindow.h
 /home/louis/anaconda3/include/qt/QtWidgets/qmainwindow.h
-
-/home/louis/anaconda3/include/qt/QtWidgets/QMenuBar
-qmenubar.h
-/home/louis/anaconda3/include/qt/QtWidgets/qmenubar.h
 
 /home/louis/anaconda3/include/qt/QtWidgets/QMessageBox
 qmessagebox.h
@@ -1180,17 +1276,13 @@ qpushbutton.h
 qlayoutitem.h
 /home/louis/anaconda3/include/qt/QtWidgets/qlayoutitem.h
 
-/home/louis/anaconda3/include/qt/QtWidgets/QStatusBar
-qstatusbar.h
-/home/louis/anaconda3/include/qt/QtWidgets/qstatusbar.h
+/home/louis/anaconda3/include/qt/QtWidgets/QTableView
+qtableview.h
+/home/louis/anaconda3/include/qt/QtWidgets/qtableview.h
 
 /home/louis/anaconda3/include/qt/QtWidgets/QVBoxLayout
 qboxlayout.h
 /home/louis/anaconda3/include/qt/QtWidgets/qboxlayout.h
-
-/home/louis/anaconda3/include/qt/QtWidgets/QWidget
-qwidget.h
-/home/louis/anaconda3/include/qt/QtWidgets/qwidget.h
 
 /home/louis/anaconda3/include/qt/QtWidgets/qabstractbutton.h
 QtWidgets/qtwidgetsglobal.h
@@ -1332,6 +1424,12 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qabstractitemview.h
 -
 
+/home/louis/anaconda3/include/qt/QtWidgets/qlabel.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+
 /home/louis/anaconda3/include/qt/QtWidgets/qlayout.h
 QtWidgets/qtwidgetsglobal.h
 -
@@ -1370,24 +1468,6 @@ QtWidgets/qwidget.h
 QtWidgets/qtabwidget.h
 -
 
-/home/louis/anaconda3/include/qt/QtWidgets/qmenu.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qwidget.h
--
-QtCore/qstring.h
--
-QtGui/qicon.h
--
-QtWidgets/qaction.h
--
-
-/home/louis/anaconda3/include/qt/QtWidgets/qmenubar.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qmenu.h
--
-
 /home/louis/anaconda3/include/qt/QtWidgets/qmessagebox.h
 QtWidgets/qtwidgetsglobal.h
 -
@@ -1418,12 +1498,6 @@ QtCore/qalgorithms.h
 QtWidgets/qtwidgetsglobal.h
 -
 QtWidgets/qabstractslider.h
--
-
-/home/louis/anaconda3/include/qt/QtWidgets/qstatusbar.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qwidget.h
 -
 
 /home/louis/anaconda3/include/qt/QtWidgets/qstyle.h
@@ -1478,6 +1552,12 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qwidget.h
 -
 
+/home/louis/anaconda3/include/qt/QtWidgets/qtableview.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qabstractitemview.h
+-
+
 /home/louis/anaconda3/include/qt/QtWidgets/qtabwidget.h
 QtWidgets/qtwidgetsglobal.h
 -
@@ -1526,7 +1606,7 @@ QtGui/qkeysequence.h
 QtGui/qevent.h
 -
 
-Transport_planning_autogen/include/ui_mainwindow.h
+Transport_planning_autogen/include/ui_displaychauffeurs.h
 QtCore/QVariant
 -
 QtWidgets/QAction
@@ -1535,22 +1615,20 @@ QtWidgets/QApplication
 -
 QtWidgets/QButtonGroup
 -
+QtWidgets/QDialog
+-
 QtWidgets/QGridLayout
 -
 QtWidgets/QHeaderView
 -
-QtWidgets/QMainWindow
--
-QtWidgets/QMenuBar
+QtWidgets/QLabel
 -
 QtWidgets/QPushButton
 -
 QtWidgets/QSpacerItem
 -
-QtWidgets/QStatusBar
+QtWidgets/QTableView
 -
 QtWidgets/QVBoxLayout
--
-QtWidgets/QWidget
 -
 
