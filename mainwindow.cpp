@@ -84,16 +84,13 @@ void MainWindow::update_tables(){
 
 void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
     //get dates
-
-    qDebug() << from_date;
     QStringList labels;
     QDate buffer = from_date;
-
     // Fill the labels string list
     for(int i = 0 ; i < from_date.daysTo(to_date)+1; i++){
-        QString label = QString::number(buffer.day());
-        label.append("/").append(QString::number(buffer.month())).append("/").append(QString::number(buffer.year()));
-        labels << label;
+        char sbuffer[11];
+        sprintf(sbuffer, "%02d/%02d/%04d", buffer.day(), buffer.month(), buffer.year());
+        labels << sbuffer;
         buffer = buffer.addDays(1);
     }
 
@@ -103,31 +100,31 @@ void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
 
     QSqlQuery query = QSqlQuery(maindb);
 
+    // COLUMNS
     // Retrieving column labels
     query.exec("SELECT nom,prenom FROM Chauffeurs");
-    QStringList colLabels;
+    labels.clear();
     int colNum = 0;
     while(query.next()){
-        colLabels  << query.value(0).toString().append(" ").append(query.value(1).toString());
+        labels  << query.value(0).toString().append(" ").append(query.value(1).toString());
         colNum++;
     }
 
 
     ui->chauffeurTable->setColumnCount(colNum);
-    ui->chauffeurTable->setHorizontalHeaderLabels(colLabels);
+    ui->chauffeurTable->setHorizontalHeaderLabels(labels);
 }
 
 void MainWindow::update_tournees(QDate& from_date, QDate& to_date){
+
     //get dates
-    qDebug() << from_date;
     QStringList labels;
     QDate buffer = from_date;
-
     // Fill the labels string list
     for(int i = 0 ; i < from_date.daysTo(to_date)+1; i++){
-        QString label = QString::number(buffer.day());
-        label.append("/").append(QString::number(buffer.month())).append("/").append(QString::number(buffer.year()));
-        labels << label;
+        char sbuffer[11];
+        sprintf(sbuffer, "%02d/%02d/%04d",buffer.day(), buffer.month(), buffer.year() );
+        labels << sbuffer;
         buffer = buffer.addDays(1);
     }
 
@@ -137,18 +134,20 @@ void MainWindow::update_tournees(QDate& from_date, QDate& to_date){
 
     QSqlQuery query = QSqlQuery(maindb);
 
+    // COLUMNS
     // Retrieving column labels
+    labels.clear();
     query.exec("SELECT nom FROM Tournees");
-    QStringList colLabels;
     int colNum = 0;
     while(query.next()){
-        colLabels  << query.value(0).toString();
+        labels  << query.value(0).toString();
         colNum++;
     }
 
 
     ui->tourneeTable->setColumnCount(colNum);
-    ui->tourneeTable->setHorizontalHeaderLabels(colLabels);
+    ui->tourneeTable->setHorizontalHeaderLabels(labels);
+
 }
 
 void MainWindow::on_fromDateEdit_userDateChanged(const QDate &date)

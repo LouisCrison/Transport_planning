@@ -140,15 +140,6 @@ CMakeFiles/Transport_planning.dir/Transport_planning_autogen/mocs_compilation.cp
  /home/louis/anaconda3/include/qt/QtWidgets/qwidget.h
 CMakeFiles/Transport_planning.dir/addchauffeur.cpp.o
  /home/louis/Transport_planning/addchauffeur.cpp
- /home/louis/Transport_planning/addchauffeur.h
- /home/louis/Transport_planning/addtournee.h
- /home/louis/Transport_planning/displaycamions.h
- /home/louis/Transport_planning/displaychauffeurs.h
- /home/louis/Transport_planning/displaytournee.h
- /home/louis/Transport_planning/mainwindow.h
- /home/louis/anaconda3/include/qt/QtCore/QDate
- /home/louis/anaconda3/include/qt/QtCore/QDebug
- /home/louis/anaconda3/include/qt/QtCore/QString
  /home/louis/anaconda3/include/qt/QtCore/QVariant
  /home/louis/anaconda3/include/qt/QtCore/qabstractitemmodel.h
  /home/louis/anaconda3/include/qt/QtCore/qalgorithms.h
@@ -169,7 +160,6 @@ CMakeFiles/Transport_planning.dir/addchauffeur.cpp.o
  /home/louis/anaconda3/include/qt/QtCore/qcoreapplication.h
  /home/louis/anaconda3/include/qt/QtCore/qcoreevent.h
  /home/louis/anaconda3/include/qt/QtCore/qdatastream.h
- /home/louis/anaconda3/include/qt/QtCore/qdatetime.h
  /home/louis/anaconda3/include/qt/QtCore/qdebug.h
  /home/louis/anaconda3/include/qt/QtCore/qeventloop.h
  /home/louis/anaconda3/include/qt/QtCore/qfile.h
@@ -259,17 +249,6 @@ CMakeFiles/Transport_planning.dir/addchauffeur.cpp.o
  /home/louis/anaconda3/include/qt/QtGui/qvector2d.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs_win.h
- /home/louis/anaconda3/include/qt/QtSql/QSql
- /home/louis/anaconda3/include/qt/QtSql/QSqlDatabase
- /home/louis/anaconda3/include/qt/QtSql/QSqlError
- /home/louis/anaconda3/include/qt/QtSql/QSqlQuery
- /home/louis/anaconda3/include/qt/QtSql/QSqlTableModel
- /home/louis/anaconda3/include/qt/QtSql/qsqldatabase.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlerror.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquery.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquerymodel.h
- /home/louis/anaconda3/include/qt/QtSql/qsqltablemodel.h
- /home/louis/anaconda3/include/qt/QtSql/qtsqlglobal.h
  /home/louis/anaconda3/include/qt/QtWidgets/QAction
  /home/louis/anaconda3/include/qt/QtWidgets/QApplication
  /home/louis/anaconda3/include/qt/QtWidgets/QButtonGroup
@@ -278,8 +257,6 @@ CMakeFiles/Transport_planning.dir/addchauffeur.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/QHeaderView
  /home/louis/anaconda3/include/qt/QtWidgets/QLabel
  /home/louis/anaconda3/include/qt/QtWidgets/QLineEdit
- /home/louis/anaconda3/include/qt/QtWidgets/QMainWindow
- /home/louis/anaconda3/include/qt/QtWidgets/QMessageBox
  /home/louis/anaconda3/include/qt/QtWidgets/QPushButton
  /home/louis/anaconda3/include/qt/QtWidgets/QSpacerItem
  /home/louis/anaconda3/include/qt/QtWidgets/QVBoxLayout
@@ -303,8 +280,6 @@ CMakeFiles/Transport_planning.dir/addchauffeur.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qlayout.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlayoutitem.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlineedit.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmainwindow.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmessagebox.h
  /home/louis/anaconda3/include/qt/QtWidgets/qpushbutton.h
  /home/louis/anaconda3/include/qt/QtWidgets/qrubberband.h
  /home/louis/anaconda3/include/qt/QtWidgets/qsizepolicy.h
@@ -318,16 +293,7 @@ CMakeFiles/Transport_planning.dir/addchauffeur.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qwidget.h
  Transport_planning_autogen/include/ui_addchauffeur.h
 CMakeFiles/Transport_planning.dir/addtournee.cpp.o
- /home/louis/Transport_planning/addchauffeur.h
  /home/louis/Transport_planning/addtournee.cpp
- /home/louis/Transport_planning/addtournee.h
- /home/louis/Transport_planning/displaycamions.h
- /home/louis/Transport_planning/displaychauffeurs.h
- /home/louis/Transport_planning/displaytournee.h
- /home/louis/Transport_planning/mainwindow.h
- /home/louis/anaconda3/include/qt/QtCore/QDate
- /home/louis/anaconda3/include/qt/QtCore/QDebug
- /home/louis/anaconda3/include/qt/QtCore/QString
  /home/louis/anaconda3/include/qt/QtCore/QVariant
  /home/louis/anaconda3/include/qt/QtCore/qabstractitemmodel.h
  /home/louis/anaconda3/include/qt/QtCore/qalgorithms.h
@@ -348,7 +314,6 @@ CMakeFiles/Transport_planning.dir/addtournee.cpp.o
  /home/louis/anaconda3/include/qt/QtCore/qcoreapplication.h
  /home/louis/anaconda3/include/qt/QtCore/qcoreevent.h
  /home/louis/anaconda3/include/qt/QtCore/qdatastream.h
- /home/louis/anaconda3/include/qt/QtCore/qdatetime.h
  /home/louis/anaconda3/include/qt/QtCore/qdebug.h
  /home/louis/anaconda3/include/qt/QtCore/qeventloop.h
  /home/louis/anaconda3/include/qt/QtCore/qfile.h
@@ -438,17 +403,6 @@ CMakeFiles/Transport_planning.dir/addtournee.cpp.o
  /home/louis/anaconda3/include/qt/QtGui/qvector2d.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs_win.h
- /home/louis/anaconda3/include/qt/QtSql/QSql
- /home/louis/anaconda3/include/qt/QtSql/QSqlDatabase
- /home/louis/anaconda3/include/qt/QtSql/QSqlError
- /home/louis/anaconda3/include/qt/QtSql/QSqlQuery
- /home/louis/anaconda3/include/qt/QtSql/QSqlTableModel
- /home/louis/anaconda3/include/qt/QtSql/qsqldatabase.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlerror.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquery.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquerymodel.h
- /home/louis/anaconda3/include/qt/QtSql/qsqltablemodel.h
- /home/louis/anaconda3/include/qt/QtSql/qtsqlglobal.h
  /home/louis/anaconda3/include/qt/QtWidgets/QAction
  /home/louis/anaconda3/include/qt/QtWidgets/QApplication
  /home/louis/anaconda3/include/qt/QtWidgets/QButtonGroup
@@ -458,8 +412,6 @@ CMakeFiles/Transport_planning.dir/addtournee.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/QHeaderView
  /home/louis/anaconda3/include/qt/QtWidgets/QLabel
  /home/louis/anaconda3/include/qt/QtWidgets/QLineEdit
- /home/louis/anaconda3/include/qt/QtWidgets/QMainWindow
- /home/louis/anaconda3/include/qt/QtWidgets/QMessageBox
  /home/louis/anaconda3/include/qt/QtWidgets/QPushButton
  /home/louis/anaconda3/include/qt/QtWidgets/QSpacerItem
  /home/louis/anaconda3/include/qt/QtWidgets/QVBoxLayout
@@ -484,8 +436,6 @@ CMakeFiles/Transport_planning.dir/addtournee.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qlayout.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlayoutitem.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlineedit.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmainwindow.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmessagebox.h
  /home/louis/anaconda3/include/qt/QtWidgets/qpushbutton.h
  /home/louis/anaconda3/include/qt/QtWidgets/qrubberband.h
  /home/louis/anaconda3/include/qt/QtWidgets/qsizepolicy.h
@@ -500,7 +450,6 @@ CMakeFiles/Transport_planning.dir/addtournee.cpp.o
  Transport_planning_autogen/include/ui_addtournee.h
 CMakeFiles/Transport_planning.dir/displaycamions.cpp.o
  /home/louis/Transport_planning/displaycamions.cpp
- /home/louis/Transport_planning/displaycamions.h
  /home/louis/anaconda3/include/qt/QtCore/QVariant
  /home/louis/anaconda3/include/qt/QtCore/qabstractitemmodel.h
  /home/louis/anaconda3/include/qt/QtCore/qalgorithms.h
@@ -650,16 +599,7 @@ CMakeFiles/Transport_planning.dir/displaycamions.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qwidget.h
  Transport_planning_autogen/include/ui_displaycamions.h
 CMakeFiles/Transport_planning.dir/displaychauffeurs.cpp.o
- /home/louis/Transport_planning/addchauffeur.h
- /home/louis/Transport_planning/addtournee.h
- /home/louis/Transport_planning/displaycamions.h
  /home/louis/Transport_planning/displaychauffeurs.cpp
- /home/louis/Transport_planning/displaychauffeurs.h
- /home/louis/Transport_planning/displaytournee.h
- /home/louis/Transport_planning/mainwindow.h
- /home/louis/anaconda3/include/qt/QtCore/QDate
- /home/louis/anaconda3/include/qt/QtCore/QDebug
- /home/louis/anaconda3/include/qt/QtCore/QString
  /home/louis/anaconda3/include/qt/QtCore/QVariant
  /home/louis/anaconda3/include/qt/QtCore/qabstractitemmodel.h
  /home/louis/anaconda3/include/qt/QtCore/qalgorithms.h
@@ -680,7 +620,6 @@ CMakeFiles/Transport_planning.dir/displaychauffeurs.cpp.o
  /home/louis/anaconda3/include/qt/QtCore/qcoreapplication.h
  /home/louis/anaconda3/include/qt/QtCore/qcoreevent.h
  /home/louis/anaconda3/include/qt/QtCore/qdatastream.h
- /home/louis/anaconda3/include/qt/QtCore/qdatetime.h
  /home/louis/anaconda3/include/qt/QtCore/qdebug.h
  /home/louis/anaconda3/include/qt/QtCore/qeventloop.h
  /home/louis/anaconda3/include/qt/QtCore/qfile.h
@@ -766,17 +705,6 @@ CMakeFiles/Transport_planning.dir/displaychauffeurs.cpp.o
  /home/louis/anaconda3/include/qt/QtGui/qvector2d.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs_win.h
- /home/louis/anaconda3/include/qt/QtSql/QSql
- /home/louis/anaconda3/include/qt/QtSql/QSqlDatabase
- /home/louis/anaconda3/include/qt/QtSql/QSqlError
- /home/louis/anaconda3/include/qt/QtSql/QSqlQuery
- /home/louis/anaconda3/include/qt/QtSql/QSqlTableModel
- /home/louis/anaconda3/include/qt/QtSql/qsqldatabase.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlerror.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquery.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquerymodel.h
- /home/louis/anaconda3/include/qt/QtSql/qsqltablemodel.h
- /home/louis/anaconda3/include/qt/QtSql/qtsqlglobal.h
  /home/louis/anaconda3/include/qt/QtWidgets/QAction
  /home/louis/anaconda3/include/qt/QtWidgets/QApplication
  /home/louis/anaconda3/include/qt/QtWidgets/QButtonGroup
@@ -784,8 +712,6 @@ CMakeFiles/Transport_planning.dir/displaychauffeurs.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/QGridLayout
  /home/louis/anaconda3/include/qt/QtWidgets/QHeaderView
  /home/louis/anaconda3/include/qt/QtWidgets/QLabel
- /home/louis/anaconda3/include/qt/QtWidgets/QMainWindow
- /home/louis/anaconda3/include/qt/QtWidgets/QMessageBox
  /home/louis/anaconda3/include/qt/QtWidgets/QPushButton
  /home/louis/anaconda3/include/qt/QtWidgets/QSpacerItem
  /home/louis/anaconda3/include/qt/QtWidgets/QTableView
@@ -809,8 +735,6 @@ CMakeFiles/Transport_planning.dir/displaychauffeurs.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qlabel.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlayout.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlayoutitem.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmainwindow.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmessagebox.h
  /home/louis/anaconda3/include/qt/QtWidgets/qpushbutton.h
  /home/louis/anaconda3/include/qt/QtWidgets/qrubberband.h
  /home/louis/anaconda3/include/qt/QtWidgets/qsizepolicy.h
@@ -825,16 +749,7 @@ CMakeFiles/Transport_planning.dir/displaychauffeurs.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qwidget.h
  Transport_planning_autogen/include/ui_displaychauffeurs.h
 CMakeFiles/Transport_planning.dir/displaytournee.cpp.o
- /home/louis/Transport_planning/addchauffeur.h
- /home/louis/Transport_planning/addtournee.h
- /home/louis/Transport_planning/displaycamions.h
- /home/louis/Transport_planning/displaychauffeurs.h
  /home/louis/Transport_planning/displaytournee.cpp
- /home/louis/Transport_planning/displaytournee.h
- /home/louis/Transport_planning/mainwindow.h
- /home/louis/anaconda3/include/qt/QtCore/QDate
- /home/louis/anaconda3/include/qt/QtCore/QDebug
- /home/louis/anaconda3/include/qt/QtCore/QString
  /home/louis/anaconda3/include/qt/QtCore/QVariant
  /home/louis/anaconda3/include/qt/QtCore/qabstractitemmodel.h
  /home/louis/anaconda3/include/qt/QtCore/qalgorithms.h
@@ -855,7 +770,6 @@ CMakeFiles/Transport_planning.dir/displaytournee.cpp.o
  /home/louis/anaconda3/include/qt/QtCore/qcoreapplication.h
  /home/louis/anaconda3/include/qt/QtCore/qcoreevent.h
  /home/louis/anaconda3/include/qt/QtCore/qdatastream.h
- /home/louis/anaconda3/include/qt/QtCore/qdatetime.h
  /home/louis/anaconda3/include/qt/QtCore/qdebug.h
  /home/louis/anaconda3/include/qt/QtCore/qeventloop.h
  /home/louis/anaconda3/include/qt/QtCore/qfile.h
@@ -941,17 +855,6 @@ CMakeFiles/Transport_planning.dir/displaytournee.cpp.o
  /home/louis/anaconda3/include/qt/QtGui/qvector2d.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs_win.h
- /home/louis/anaconda3/include/qt/QtSql/QSql
- /home/louis/anaconda3/include/qt/QtSql/QSqlDatabase
- /home/louis/anaconda3/include/qt/QtSql/QSqlError
- /home/louis/anaconda3/include/qt/QtSql/QSqlQuery
- /home/louis/anaconda3/include/qt/QtSql/QSqlTableModel
- /home/louis/anaconda3/include/qt/QtSql/qsqldatabase.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlerror.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquery.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquerymodel.h
- /home/louis/anaconda3/include/qt/QtSql/qsqltablemodel.h
- /home/louis/anaconda3/include/qt/QtSql/qtsqlglobal.h
  /home/louis/anaconda3/include/qt/QtWidgets/QAction
  /home/louis/anaconda3/include/qt/QtWidgets/QApplication
  /home/louis/anaconda3/include/qt/QtWidgets/QButtonGroup
@@ -959,8 +862,6 @@ CMakeFiles/Transport_planning.dir/displaytournee.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/QGridLayout
  /home/louis/anaconda3/include/qt/QtWidgets/QHeaderView
  /home/louis/anaconda3/include/qt/QtWidgets/QLabel
- /home/louis/anaconda3/include/qt/QtWidgets/QMainWindow
- /home/louis/anaconda3/include/qt/QtWidgets/QMessageBox
  /home/louis/anaconda3/include/qt/QtWidgets/QPushButton
  /home/louis/anaconda3/include/qt/QtWidgets/QSpacerItem
  /home/louis/anaconda3/include/qt/QtWidgets/QTableView
@@ -984,8 +885,6 @@ CMakeFiles/Transport_planning.dir/displaytournee.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qlabel.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlayout.h
  /home/louis/anaconda3/include/qt/QtWidgets/qlayoutitem.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmainwindow.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmessagebox.h
  /home/louis/anaconda3/include/qt/QtWidgets/qpushbutton.h
  /home/louis/anaconda3/include/qt/QtWidgets/qrubberband.h
  /home/louis/anaconda3/include/qt/QtWidgets/qsizepolicy.h
@@ -1000,17 +899,7 @@ CMakeFiles/Transport_planning.dir/displaytournee.cpp.o
  /home/louis/anaconda3/include/qt/QtWidgets/qwidget.h
  Transport_planning_autogen/include/ui_displaytournee.h
 CMakeFiles/Transport_planning.dir/main.cpp.o
- /home/louis/Transport_planning/addchauffeur.h
- /home/louis/Transport_planning/addtournee.h
- /home/louis/Transport_planning/displaycamions.h
- /home/louis/Transport_planning/displaychauffeurs.h
- /home/louis/Transport_planning/displaytournee.h
  /home/louis/Transport_planning/main.cpp
- /home/louis/Transport_planning/mainwindow.h
- /home/louis/anaconda3/include/qt/QtCore/QDate
- /home/louis/anaconda3/include/qt/QtCore/QDebug
- /home/louis/anaconda3/include/qt/QtCore/QString
- /home/louis/anaconda3/include/qt/QtCore/qabstractitemmodel.h
  /home/louis/anaconda3/include/qt/QtCore/qalgorithms.h
  /home/louis/anaconda3/include/qt/QtCore/qarraydata.h
  /home/louis/anaconda3/include/qt/QtCore/qatomic.h
@@ -1029,7 +918,6 @@ CMakeFiles/Transport_planning.dir/main.cpp.o
  /home/louis/anaconda3/include/qt/QtCore/qcoreapplication.h
  /home/louis/anaconda3/include/qt/QtCore/qcoreevent.h
  /home/louis/anaconda3/include/qt/QtCore/qdatastream.h
- /home/louis/anaconda3/include/qt/QtCore/qdatetime.h
  /home/louis/anaconda3/include/qt/QtCore/qdebug.h
  /home/louis/anaconda3/include/qt/QtCore/qeventloop.h
  /home/louis/anaconda3/include/qt/QtCore/qfile.h
@@ -1091,7 +979,6 @@ CMakeFiles/Transport_planning.dir/main.cpp.o
  /home/louis/anaconda3/include/qt/QtGui/qfontinfo.h
  /home/louis/anaconda3/include/qt/QtGui/qfontmetrics.h
  /home/louis/anaconda3/include/qt/QtGui/qguiapplication.h
- /home/louis/anaconda3/include/qt/QtGui/qicon.h
  /home/louis/anaconda3/include/qt/QtGui/qimage.h
  /home/louis/anaconda3/include/qt/QtGui/qinputmethod.h
  /home/louis/anaconda3/include/qt/QtGui/qkeysequence.h
@@ -1112,28 +999,10 @@ CMakeFiles/Transport_planning.dir/main.cpp.o
  /home/louis/anaconda3/include/qt/QtGui/qvector2d.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs.h
  /home/louis/anaconda3/include/qt/QtGui/qwindowdefs_win.h
- /home/louis/anaconda3/include/qt/QtSql/QSql
- /home/louis/anaconda3/include/qt/QtSql/QSqlDatabase
- /home/louis/anaconda3/include/qt/QtSql/QSqlError
- /home/louis/anaconda3/include/qt/QtSql/QSqlQuery
- /home/louis/anaconda3/include/qt/QtSql/QSqlTableModel
- /home/louis/anaconda3/include/qt/QtSql/qsqldatabase.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlerror.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquery.h
- /home/louis/anaconda3/include/qt/QtSql/qsqlquerymodel.h
- /home/louis/anaconda3/include/qt/QtSql/qsqltablemodel.h
- /home/louis/anaconda3/include/qt/QtSql/qtsqlglobal.h
  /home/louis/anaconda3/include/qt/QtWidgets/QApplication
- /home/louis/anaconda3/include/qt/QtWidgets/QDialog
- /home/louis/anaconda3/include/qt/QtWidgets/QMainWindow
- /home/louis/anaconda3/include/qt/QtWidgets/QMessageBox
  /home/louis/anaconda3/include/qt/QtWidgets/qapplication.h
  /home/louis/anaconda3/include/qt/QtWidgets/qdesktopwidget.h
- /home/louis/anaconda3/include/qt/QtWidgets/qdialog.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmainwindow.h
- /home/louis/anaconda3/include/qt/QtWidgets/qmessagebox.h
  /home/louis/anaconda3/include/qt/QtWidgets/qsizepolicy.h
- /home/louis/anaconda3/include/qt/QtWidgets/qtabwidget.h
  /home/louis/anaconda3/include/qt/QtWidgets/qtwidgets-config.h
  /home/louis/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h
  /home/louis/anaconda3/include/qt/QtWidgets/qwidget.h
