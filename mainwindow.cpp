@@ -74,14 +74,18 @@ void MainWindow::create_tables(){
 
 }
 
+
 void MainWindow::yellow_weekends(QDate& from_date){
+    QLocale locale = QLocale(QLocale::French, QLocale::France);
 
     QDate buffer = from_date;
     for(int i = 0 ; i < ui->tourneeTable->rowCount() ; i++){
-        qDebug() << buffer.dayOfWeek();
+        ui->tourneeTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));
         if (buffer.dayOfWeek()>5){
             for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){
-                ui->tourneeTable->setItem(i,j,new QTableWidgetItem());
+                if(ui->tourneeTable->item(i,j) == nullptr){
+                    ui->tourneeTable->setItem(i,j,new QTableWidgetItem());
+                }
                 ui->tourneeTable->item(i,j)->setBackground(Qt::yellow);
             }
         }
@@ -89,11 +93,13 @@ void MainWindow::yellow_weekends(QDate& from_date){
     }
 
     buffer = from_date;
-    for(int i = 0 ; i < ui->tourneeTable->rowCount() ; i++){
-        qDebug() << buffer.dayOfWeek();
+    for(int i = 0 ; i < ui->chauffeurTable->rowCount() ; i++){
+        ui->chauffeurTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));
         if (buffer.dayOfWeek()>5){
             for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){
-                ui->chauffeurTable->setItem(i,j,new QTableWidgetItem());
+                if(ui->chauffeurTable->item(i,j) == nullptr){
+                    ui->chauffeurTable->setItem(i,j,new QTableWidgetItem());
+                }
                 ui->chauffeurTable->item(i,j)->setBackground(Qt::yellow);
             }
         }
@@ -123,7 +129,8 @@ void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
     // Retrieving column labels
     query.exec("SELECT nom,prenom FROM Chauffeurs");
     labels.clear();
-    int colNum = 0;
+    int colNum = 1;
+    labels << "Jour";
     while(query.next()){
         labels  << query.value(0).toString().append(" ").append(query.value(1).toString());
         colNum++;
@@ -157,7 +164,8 @@ void MainWindow::update_tournees(QDate& from_date, QDate& to_date){
     // Retrieving column labels
     labels.clear();
     query.exec("SELECT nom FROM Tournees");
-    int colNum = 0;
+    int colNum = 1;
+    labels << "Jour";
     while(query.next()){
         labels  << query.value(0).toString();
         colNum++;
