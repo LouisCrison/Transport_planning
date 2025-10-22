@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent, std::string city)
+MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -74,12 +74,31 @@ void MainWindow::create_tables(){
 
 }
 
-void MainWindow::update_tables(){
-    QDate from_date = ui->fromDateEdit->date();
-    QDate to_date = ui->toDateEdit->date();
+void MainWindow::yellow_weekends(QDate& from_date){
 
-    update_chauffeurs(from_date, to_date);
-    update_tournees(from_date, to_date);
+    QDate buffer = from_date;
+    for(int i = 0 ; i < ui->tourneeTable->rowCount() ; i++){
+        qDebug() << buffer.dayOfWeek();
+        if (buffer.dayOfWeek()>5){
+            for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){
+                ui->tourneeTable->setItem(i,j,new QTableWidgetItem());
+                ui->tourneeTable->item(i,j)->setBackground(Qt::yellow);
+            }
+        }
+        buffer = buffer.addDays(1);
+    }
+
+    buffer = from_date;
+    for(int i = 0 ; i < ui->tourneeTable->rowCount() ; i++){
+        qDebug() << buffer.dayOfWeek();
+        if (buffer.dayOfWeek()>5){
+            for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){
+                ui->chauffeurTable->setItem(i,j,new QTableWidgetItem());
+                ui->chauffeurTable->item(i,j)->setBackground(Qt::yellow);
+            }
+        }
+        buffer = buffer.addDays(1);
+    }
 }
 
 void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
@@ -147,7 +166,16 @@ void MainWindow::update_tournees(QDate& from_date, QDate& to_date){
 
     ui->tourneeTable->setColumnCount(colNum);
     ui->tourneeTable->setHorizontalHeaderLabels(labels);
+}
 
+void MainWindow::update_tables(){
+    QDate from_date = ui->fromDateEdit->date();
+    QDate to_date = ui->toDateEdit->date();
+
+    update_chauffeurs(from_date, to_date);
+    update_tournees(from_date, to_date);
+
+    yellow_weekends(from_date);
 }
 
 void MainWindow::on_fromDateEdit_userDateChanged(const QDate &date)

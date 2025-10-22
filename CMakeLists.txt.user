@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.11.0, 2025-10-22T10:47:40. -->
+<!-- Written by QtCreator 4.11.0, 2025-10-22T12:59:51. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -316,7 +316,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Transport_planning</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.Transport_planning</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">Transport_planning</value>
-    <value type="QString" key="RunConfiguration.Arguments">Amiens</value>
+    <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
