@@ -47,6 +47,9 @@ if(ANDROID)
     addtournee.cpp
     addtournee.h
     addtournee.ui
+    addevent.cpp
+    addevent.h
+    addevent.ui
   )
 else()
   add_executable(Transport_planning
@@ -69,6 +72,9 @@ else()
     addtournee.cpp
     addtournee.h
     addtournee.ui
+    addevent.cpp
+    addevent.h
+    addevent.ui
   )
 endif()
 

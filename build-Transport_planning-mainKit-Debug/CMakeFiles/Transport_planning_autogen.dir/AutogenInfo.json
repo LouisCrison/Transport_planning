@@ -13,6 +13,11 @@
 			"EWIEGA46WW/moc_addchauffeur.cpp"
 		],
 		[
+			"/home/louis/Transport_planning/addevent.h",
+			"MU",
+			"EWIEGA46WW/moc_addevent.cpp"
+		],
+		[
 			"/home/louis/Transport_planning/addtournee.h",
 			"MU",
 			"EWIEGA46WW/moc_addtournee.cpp"
@@ -91,6 +96,7 @@
 	"SOURCES" : 
 	[
 		[ "/home/louis/Transport_planning/addchauffeur.cpp", "MU" ],
+		[ "/home/louis/Transport_planning/addevent.cpp", "MU" ],
 		[ "/home/louis/Transport_planning/addtournee.cpp", "MU" ],
 		[ "/home/louis/Transport_planning/displaycamions.cpp", "MU" ],
 		[ "/home/louis/Transport_planning/displaychauffeurs.cpp", "MU" ],

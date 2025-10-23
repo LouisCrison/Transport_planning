@@ -127,6 +127,15 @@
 		<Unit filename="/home/louis/Transport_planning/addchauffeur.ui">
 			<Option target="Transport_planning"/>
 		</Unit>
+		<Unit filename="/home/louis/Transport_planning/addevent.cpp">
+			<Option target="Transport_planning"/>
+		</Unit>
+		<Unit filename="/home/louis/Transport_planning/addevent.h">
+			<Option target="Transport_planning"/>
+		</Unit>
+		<Unit filename="/home/louis/Transport_planning/addevent.ui">
+			<Option target="Transport_planning"/>
+		</Unit>
 		<Unit filename="/home/louis/Transport_planning/addtournee.cpp">
 			<Option target="Transport_planning"/>
 		</Unit>

@@ -5,6 +5,7 @@
 #include "displaychauffeurs.h"
 #include "displaycamions.h"
 #include "displaytournee.h"
+#include "addevent.h"
 
 #include <iostream>
 #include <string>
@@ -42,6 +43,8 @@ private slots:
     void on_fromDateEdit_userDateChanged(const QDate &date);
 
     void on_toDateEdit_userDateChanged(const QDate &date);
+
+    void on_tourneeTable_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

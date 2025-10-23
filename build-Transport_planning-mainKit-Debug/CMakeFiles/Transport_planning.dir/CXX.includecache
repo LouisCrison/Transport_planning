@@ -20,6 +20,12 @@ QMainWindow
 mainwindow.h
 /home/louis/Transport_planning/mainwindow.h
 
+/home/louis/Transport_planning/addevent.h
+QDialog
+-
+QDate
+-
+
 /home/louis/Transport_planning/addtournee.h
 mainwindow.h
 /home/louis/Transport_planning/mainwindow.h
@@ -75,6 +81,8 @@ displaycamions.h
 /home/louis/Transport_planning/displaycamions.h
 displaytournee.h
 /home/louis/Transport_planning/displaytournee.h
+addevent.h
+/home/louis/Transport_planning/addevent.h
 iostream
 -
 string

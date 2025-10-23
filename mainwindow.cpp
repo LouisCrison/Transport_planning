@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::critical(this,"Error opening database",maindb.lastError().text());
         return;
     }
-    create_tables();
+//    create_tables();
     update_tables();
 }
 
@@ -79,24 +79,23 @@ void MainWindow::yellow_weekends(QDate& from_date){
     QLocale locale = QLocale(QLocale::French, QLocale::France);
 
     QDate buffer = from_date;
-    for(int i = 0 ; i < ui->tourneeTable->rowCount() ; i++){
+    QFont font;
+    font.setCapitalization(QFont::Capitalize);
+    font.setWeight(QFont::Black);
+
+    for(int i = 0 ; i < ui->chauffeurTable->rowCount() ; i++){
+        ui->chauffeurTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));
         ui->tourneeTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));
-        if (buffer.dayOfWeek()>5){
+        ui->chauffeurTable->item(i,0)->setFont(font);
+        ui->tourneeTable->item(i,0)->setFont(font);
+        if (buffer.dayOfWeek()>5){ // if it's a weekend day
             for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){
                 if(ui->tourneeTable->item(i,j) == nullptr){
                     ui->tourneeTable->setItem(i,j,new QTableWidgetItem());
                 }
                 ui->tourneeTable->item(i,j)->setBackground(Qt::yellow);
             }
-        }
-        buffer = buffer.addDays(1);
-    }
-
-    buffer = from_date;
-    for(int i = 0 ; i < ui->chauffeurTable->rowCount() ; i++){
-        ui->chauffeurTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));
-        if (buffer.dayOfWeek()>5){
-            for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){
+            for(int j = 0 ; j < ui->chauffeurTable->columnCount() ; j++){
                 if(ui->chauffeurTable->item(i,j) == nullptr){
                     ui->chauffeurTable->setItem(i,j,new QTableWidgetItem());
                 }
@@ -127,7 +126,7 @@ void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
 
     // COLUMNS
     // Retrieving column labels
-    query.exec("SELECT nom,prenom FROM Chauffeurs");
+    query.exec("SELECT name,surname FROM Chauffeurs");
     labels.clear();
     int colNum = 1;
     labels << "Jour";
@@ -163,7 +162,7 @@ void MainWindow::update_tournees(QDate& from_date, QDate& to_date){
     // COLUMNS
     // Retrieving column labels
     labels.clear();
-    query.exec("SELECT nom FROM Tournees");
+    query.exec("SELECT name FROM Tournees");
     int colNum = 1;
     labels << "Jour";
     while(query.next()){
@@ -194,4 +193,13 @@ void MainWindow::on_fromDateEdit_userDateChanged(const QDate &date)
 void MainWindow::on_toDateEdit_userDateChanged(const QDate &date)
 {
     update_tables();
+}
+
+void MainWindow::on_tourneeTable_doubleClicked(const QModelIndex &index)
+{
+    QDate from_date = ui->fromDateEdit->date();
+
+    AddEvent* addev = new AddEvent(this);
+    addev->setDefaultDate(from_date.addDays(index.row()));
+    addev->exec();
 }

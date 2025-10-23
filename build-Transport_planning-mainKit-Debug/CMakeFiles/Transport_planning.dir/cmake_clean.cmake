@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "Transport_planning_autogen"
   "CMakeFiles/Transport_planning.dir/Transport_planning_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/Transport_planning.dir/addchauffeur.cpp.o"
+  "CMakeFiles/Transport_planning.dir/addevent.cpp.o"
   "CMakeFiles/Transport_planning.dir/addtournee.cpp.o"
   "CMakeFiles/Transport_planning.dir/displaycamions.cpp.o"
   "CMakeFiles/Transport_planning.dir/displaychauffeurs.cpp.o"
