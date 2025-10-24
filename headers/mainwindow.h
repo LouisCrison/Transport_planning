@@ -5,6 +5,7 @@
 #include "displaychauffeurs.h"
 #include "displaycamions.h"
 #include "displaytournee.h"
+#include "addevent.h"
 
 #include <iostream>
 #include <string>
@@ -28,7 +29,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr, std::string city = "Toulouse");
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QSqlDatabase getdb();
 
@@ -43,11 +44,14 @@ private slots:
 
     void on_toDateEdit_userDateChanged(const QDate &date);
 
+    void on_tourneeTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase maindb;
     void create_tables();
     void update_tables();
+    void yellow_weekends(QDate& from_date);
     void update_tournees(QDate& from_date, QDate& to_date);
     void update_chauffeurs(QDate& from_date, QDate& to_date);
 };
