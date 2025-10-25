@@ -45,7 +45,6 @@ void MainWindow::on_camionsButton_clicked()
     update_tables();
 }
 
-
 void MainWindow::on_chauffeursButton_clicked()
 {
     DisplayChauffeurs* chauffDisp = new DisplayChauffeurs(this);

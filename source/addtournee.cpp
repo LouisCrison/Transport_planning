@@ -44,7 +44,7 @@ void AddTournee::on_addTourBtn_clicked()
     query.bindValue(":camion", camion);
 
     if(!query.exec()){
-        qDebug() << query.lastError().text();
+        QMessageBox::critical(this, "SQLERROR", query.lastError().text());
     }
 
     qobject_cast<DisplayTournee*>(parent())->update_table();
