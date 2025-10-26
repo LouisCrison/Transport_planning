@@ -43,14 +43,17 @@ void DisplayChauffeurs::on_DeleteButton_clicked()
     int row = ui->chauffTable->selectionModel()->selectedRows().first().row();
 
 
-    id = ui->chauffTable->model()->index(row, 0).data().toInt();
+    QString name = ui->chauffTable->model()->index(row, 0).data().toString();
+    QString surname = ui->chauffTable->model()->index(row, 1).data().toString();
 
 
-    query.prepare("DELETE FROM Chauffeurs WHERE id = :id");
-    query.bindValue(":id", id);
+    query.prepare("DELETE FROM Chauffeurs WHERE ((name = :name) AND (surname = :surname))");
+    query.bindValue(":name", name);
+    query.bindValue(":surname", surname);
     if(!query.exec()){
-        QMessageBox::critical(this,"SQL ERROR", query.lastError().text());
+        QMessageBox::critical(this,"SQL ERROR deleting", query.lastError().text());
     }
+    qDebug() << "row deleted : " << query.numRowsAffected();
 
     update_table();
 }

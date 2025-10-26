@@ -71,5 +71,8 @@ Thumbs.db
 *.dll
 *.exe
 
-build/
-!*/main_database.db
+build/*
+!build/
+build/Desktop-Release/*
+!build/Desktop-Release/
+!build/Desktop-Release/main_database.db

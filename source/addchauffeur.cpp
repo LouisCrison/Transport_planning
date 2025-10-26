@@ -24,12 +24,12 @@ void AddChauffeur::on_validBtn_clicked()
     QString name = ui->nameLine->text();
     QString surname = ui->surnameLine->text();
 
-    query.prepare("INSERT INTO Chauffeurs (prenom,nom) VALUES (:name,:surname)");
+    query.prepare("INSERT INTO Chauffeurs (name,surname) VALUES (:name,:surname)");
     query.bindValue(":name",name);
     query.bindValue(":surname",surname);
 
     if(!query.exec()){
-        QMessageBox::critical(this,"SQL ERROR",query.lastError().text());
+        QMessageBox::critical(this,"SQL ERROR in AddChauffeur",query.lastError().text());
     }
 
     this->close();
