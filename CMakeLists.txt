@@ -45,6 +45,8 @@ add_executable(Transport_planning
     source/addtournee.cpp
     source/addevent.cpp
     source/databasesingleton.cpp
+    source/addclient.cpp
+    source/displayclient.cpp
 
     headers/mainwindow.h
     headers/addchauffeur.h
@@ -54,6 +56,8 @@ add_executable(Transport_planning
     headers/addtournee.h
     headers/addevent.h
     headers/databasesingleton.h
+    headers/addclient.h
+    headers/displayclient.h
 
     forms/addevent.ui
     forms/addchauffeur.ui
@@ -62,7 +66,8 @@ add_executable(Transport_planning
     forms/displaychauffeurs.ui
     forms/displaytournee.ui
     forms/mainwindow.ui
-
+    forms/addclient.ui
+    forms/displayclient.ui
 )
 
 

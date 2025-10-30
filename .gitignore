@@ -76,3 +76,4 @@ build/*
 build/Desktop-Release/*
 !build/Desktop-Release/
 !build/Desktop-Release/main_database.db
+CMakeLists.txt.user.4fe476e

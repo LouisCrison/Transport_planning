@@ -8,6 +8,7 @@ AddTournee::AddTournee(QWidget *parent) :
     ui->setupUi(this);
     MainWindow* mw = qobject_cast<MainWindow*>(parent->parent());
     maindb = mw->getdb();
+
     fill_combo_box();
 }
 
@@ -22,32 +23,23 @@ void AddTournee::on_addTourBtn_clicked()
     QSqlQuery query = QSqlQuery(maindb);
 
     QString name = ui->nameLine->text();
-    QString client = ui->clientLine->text();
     qint32 price = ui->priceLine->text().toInt();
-    QString chauff_name = ui->chauffNameLine->text();
-    QString chauff_surname = ui->chauffSurnameLine->text();
-    QString camion = ui->camionLine->text();
 
-    qDebug() << "name : " << name;
-    qDebug() << "client : " << client;
-    qDebug() << "price : " << price;
-    qDebug() << "name : " << chauff_name;
-    qDebug() << "surname : " << chauff_surname;
-    qDebug() << "camion : " << camion;
+    // qDebug() << "name : " << name;
+    // qDebug() << "price : " << price;
+    // qDebug() << "camion : " << camion;
 
-    query.prepare("INSERT INTO Tournees VALUES (:name, :client, :price, :chauff_name, :chauff_surname, :camion)");
-    query.bindValue(":name", name);
-    query.bindValue(":client", client);
-    query.bindValue(":price", price);
-    query.bindValue(":chauff_name", chauff_name);
-    query.bindValue(":chauff_surname", chauff_surname);
-    query.bindValue(":camion", camion);
+    // query.prepare("INSERT INTO Tournees VALUES (:name, :client, :price, :chauff_name, :chauff_surname, :camion)");
+    // query.bindValue(":name", name);
+    // query.bindValue(":client", client);
+    // query.bindValue(":price", price);
+    // query.bindValue(":chauff_name", chauff_name);
+    // query.bindValue(":chauff_surname", chauff_surname);
+    // query.bindValue(":camion", camion);
 
-    if(!query.exec()){
-        QMessageBox::critical(this, "SQLERROR", query.lastError().text());
-    }
-
-    qobject_cast<DisplayTournee*>(parent())->update_table();
+    // if(!query.exec()){
+    //     QMessageBox::critical(this, "SQLERROR", query.lastError().text());
+    // }
 
     this->close();
 

@@ -31,6 +31,11 @@ private:
     QSqlDatabase maindb;
 
     void fill_combo_box();
+    void fill_driver_combo_box();
+    void fill_truck_combo_box();
+    void fill_client_combo_box();
+
+
 };
 
 #endif // ADDTOURNEE_H

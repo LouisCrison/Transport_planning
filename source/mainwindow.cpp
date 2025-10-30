@@ -20,11 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     update_tables();
 
-    QSqlQuery query = QSqlQuery(maindb);
-
-    if(!query.exec("CREATE TABLE IF NOT EXISTS Chauffeurs (louis, crison)")){
-        QMessageBox::critical(this,"SQL ERROR", query.lastError().text());
-    }
 }
 
 MainWindow::~MainWindow()
@@ -60,6 +55,13 @@ void MainWindow::on_tourneesButton_clicked()
     dispTour->exec();
     update_tables();
 }
+
+void MainWindow::on_clientsButton_clicked()
+{
+    DisplayClient* dispC = new DisplayClient();
+    dispC->exec();
+}
+
 
 
 void MainWindow::create_tables(){
@@ -209,3 +211,17 @@ void MainWindow::on_tourneeTable_doubleClicked(const QModelIndex &index)
     addev->setDefaultDate(from_date.addDays(index.row()));
     addev->exec();
 }
+
+
+void MainWindow::on_chauffeurTable_doubleClicked(const QModelIndex &index)
+{
+    QDate from_date = ui->fromDateEdit->date();
+    qDebug() << "double clicked";
+
+    AddEvent* addev = new AddEvent(this);
+    addev->setDefaultDate(from_date.addDays(index.row()));
+    addev->exec();
+}
+
+
+

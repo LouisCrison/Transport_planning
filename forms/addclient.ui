@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AddTournee</class>
- <widget class="QDialog" name="AddTournee">
+ <class>AddClient</class>
+ <widget class="QDialog" name="AddClient">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>328</width>
-    <height>479</height>
+    <width>400</width>
+    <height>477</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -24,12 +18,12 @@
     <widget class="QLabel" name="label_3">
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>15</pointsize>
        <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>Ajouter une Tournée</string>
+      <string>Ajouter un client</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -38,53 +32,33 @@
    </item>
    <item>
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>Nom</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="nameLine"/>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Client</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QComboBox" name="comboBox"/>
+    <widget class="QLineEdit" name="clientNameEdit"/>
    </item>
    <item>
     <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>Prix</string>
+      <string>Ville</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="priceLine"/>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>id Chauffeur Usuel</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QComboBox" name="idChauffCombo"/>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Camion Usuel</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QComboBox" name="comboBox_2"/>
+    <widget class="QLineEdit" name="clientCityEdit"/>
    </item>
    <item>
     <spacer name="verticalSpacer">
@@ -102,34 +76,26 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="addTourBtn">
-       <property name="font">
-        <font>
-         <bold>true</bold>
-        </font>
-       </property>
+      <widget class="QPushButton" name="addClientBtn">
        <property name="styleSheet">
         <string notr="true">QPushButton{
-color:white;
-background-color:green
+color: white;
+background-color: Green;
+font : bold;
 }</string>
        </property>
        <property name="text">
-        <string>AJouter</string>
+        <string>Valider</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="cancelBtn">
-       <property name="font">
-        <font>
-         <bold>true</bold>
-        </font>
-       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
-color:white;
-background-color:red;
+color : white; 
+background-color : Red;
+font : bold
 }</string>
        </property>
        <property name="text">

@@ -33,6 +33,7 @@ void DisplayTournee::on_addTourBtn_clicked()
 {
     AddTournee* addTour = new AddTournee(this);
     addTour->exec();
+    update_table();
 }
 
 void DisplayTournee::on_dltTourBtn_clicked()
