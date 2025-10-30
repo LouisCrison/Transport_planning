@@ -7,6 +7,7 @@
 #include "displaytournee.h"
 #include "displayclient.h"
 #include "addevent.h"
+#include "databasesingleton.h"
 
 #include <iostream>
 #include <string>

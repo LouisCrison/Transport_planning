@@ -2,8 +2,13 @@
 #define DISPLAYCLIENT_H
 
 #include "addclient.h"
+#include "databasesingleton.h"
 
 #include <QDialog>
+#include <QSqlTableModel>
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QSqlQuery>
 
 namespace Ui {
 class DisplayClient;
@@ -20,8 +25,16 @@ public:
 private slots:
     void on_addClientBtn_clicked();
 
+
+
+    void on_deleteClientBtn_clicked();
+
 private:
     Ui::DisplayClient *ui;
+
+    void update_table();
+
+    QSqlDatabase main_db;
 };
 
 #endif // DISPLAYCLIENT_H

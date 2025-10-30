@@ -10,8 +10,9 @@ MainWindow::MainWindow(QWidget *parent)
 //    std::cout << "drivers :" << std::endl;
 //    qDebug() << QSqlDatabase::drivers();
 
-    maindb = QSqlDatabase::addDatabase("QSQLITE");
-    maindb.setDatabaseName("main_database.db");
+    DatabaseSingleton& instance = DatabaseSingleton::get_instance();
+
+    maindb = instance.get_db();
 
     if(!maindb.open()){
         QMessageBox::critical(this,"Error opening database",maindb.lastError().text());
