@@ -91,24 +91,28 @@ void MainWindow::yellow_weekends(QDate& from_date){
     font.setCapitalization(QFont::Capitalize);
     font.setWeight(QFont::Black);
 
-    for(int i = 0 ; i < ui->chauffeurTable->rowCount() ; i++){
-        ui->chauffeurTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));
-        ui->tourneeTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));
+    for(int i = 0 ; i < ui->chauffeurTable->rowCount() ; i++){ // Going through rows
+        ui->chauffeurTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd"))); // Writing the day in first column
+        ui->tourneeTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));   // In both tables
         ui->chauffeurTable->item(i,0)->setFont(font);
         ui->tourneeTable->item(i,0)->setFont(font);
+        QBrush color;
         if (buffer.dayOfWeek()>5){ // if it's a weekend day
-            for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){
-                if(ui->tourneeTable->item(i,j) == nullptr){
-                    ui->tourneeTable->setItem(i,j,new QTableWidgetItem());
-                }
-                ui->tourneeTable->item(i,j)->setBackground(Qt::yellow);
+            color = Qt::yellow;
+        } else {
+            color = Qt::white;
+        }
+        for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){ // FIlling color in tournee table
+            if(ui->tourneeTable->item(i,j) == nullptr){
+                ui->tourneeTable->setItem(i,j,new QTableWidgetItem());
             }
-            for(int j = 0 ; j < ui->chauffeurTable->columnCount() ; j++){
-                if(ui->chauffeurTable->item(i,j) == nullptr){
-                    ui->chauffeurTable->setItem(i,j,new QTableWidgetItem());
-                }
-                ui->chauffeurTable->item(i,j)->setBackground(Qt::yellow);
+            ui->tourneeTable->item(i,j)->setBackground(color);
+        }
+        for(int j = 0 ; j < ui->chauffeurTable->columnCount() ; j++){ // Filling colors in chauff table
+            if(ui->chauffeurTable->item(i,j) == nullptr){
+                ui->chauffeurTable->setItem(i,j,new QTableWidgetItem());
             }
+            ui->chauffeurTable->item(i,j)->setBackground(color);
         }
         buffer = buffer.addDays(1);
     }
