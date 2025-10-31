@@ -6,7 +6,9 @@
 #include <QDebug>
 #include <QString>
 #include <QMainWindow>
+
 #include "mainwindow.h"
+#include "databasesingleton.h"
 
 namespace Ui {
 class AddChauffeur;

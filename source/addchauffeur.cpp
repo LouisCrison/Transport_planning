@@ -6,8 +6,9 @@ AddChauffeur::AddChauffeur(QWidget *parent):
     ui(new Ui::AddChauffeur)
 {
     ui->setupUi(this);
-    MainWindow* mw = qobject_cast<MainWindow*>(parent->parent());
-    maindb = mw->getdb();
+
+    DatabaseSingleton& instance = DatabaseSingleton::get_instance();
+    maindb = instance.get_db();
 }
 
 AddChauffeur::~AddChauffeur()
