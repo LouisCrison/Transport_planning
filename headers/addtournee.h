@@ -23,8 +23,6 @@ public:
 private slots:
     void on_addTourBtn_clicked();
 
-    void on_idChauffCombo_currentIndexChanged(const QString &arg1);
-
 private:
     Ui::AddTournee *ui;
 

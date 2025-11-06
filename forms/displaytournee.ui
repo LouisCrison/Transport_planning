@@ -32,7 +32,10 @@
      <item>
       <widget class="QPushButton" name="dltTourBtn">
        <property name="text">
-        <string>SUpprimer</string>
+        <string>Supprimer</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -59,7 +62,6 @@
      <property name="font">
       <font>
        <pointsize>14</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>

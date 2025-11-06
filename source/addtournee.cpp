@@ -48,20 +48,54 @@ void AddTournee::on_addTourBtn_clicked()
 
 void AddTournee::on_idChauffCombo_currentIndexChanged(const QString &arg1)
 {
-
+    return;
 }
 
 void AddTournee::fill_combo_box(){
 
+    fill_driver_combo_box();
+    fill_client_combo_box();
+    fill_truck_combo_box();
+}
+
+void AddTournee::fill_driver_combo_box(){
     QStringList items;
     QSqlQuery query = QSqlQuery(maindb);
 
     query.exec("SELECT * FROM Chauffeurs");
-    ui->idChauffCombo->insertItem(0,"N/A");
+    ui->chauffCombo->insertItem(0,"N/A");
 
     while(query.next()){
-        items << query.value(1).toString().append(" ").append(query.value(2).toString());
+        items << query.value(0).toString().append(" ").append(query.value(1).toString());
     }
 
-    ui->idChauffCombo->insertItems(1,items);
+    ui->chauffCombo->insertItems(1,items);
+}
+
+void AddTournee::fill_client_combo_box(){
+    QStringList items;
+    QSqlQuery query = QSqlQuery(maindb);
+
+    query.exec("SELECT * FROM Clients");
+    ui->clientCombo->insertItem(0,"N/A");
+
+    while(query.next()){
+        items << query.value(0).toString().append(" ").append(query.value(1).toString());
+    }
+
+    ui->clientCombo->insertItems(1,items);
+}
+
+void AddTournee::fill_truck_combo_box(){
+    QStringList items;
+    QSqlQuery query = QSqlQuery(maindb);
+
+    query.exec("SELECT * FROM Trucks");
+    ui->truckCombo->insertItem(0,"N/A");
+
+    while(query.next()){
+        items << query.value(0).toString();
+    }
+
+    ui->truckCombo->insertItems(1,items);
 }
