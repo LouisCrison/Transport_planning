@@ -24,32 +24,30 @@ void AddTournee::on_addTourBtn_clicked()
 
     QString name = ui->nameLine->text();
     qint32 price = ui->priceLine->text().toInt();
+    QString driver = ui->chauffCombo->currentText();
+    QString client = ui->clientCombo->currentText();
+    QString truck = ui->truckCombo->currentText();
 
-    // qDebug() << "name : " << name;
-    // qDebug() << "price : " << price;
-    // qDebug() << "camion : " << camion;
 
-    // query.prepare("INSERT INTO Tournees VALUES (:name, :client, :price, :chauff_name, :chauff_surname, :camion)");
-    // query.bindValue(":name", name);
-    // query.bindValue(":client", client);
-    // query.bindValue(":price", price);
-    // query.bindValue(":chauff_name", chauff_name);
-    // query.bindValue(":chauff_surname", chauff_surname);
-    // query.bindValue(":camion", camion);
+    qDebug() << "name : " << name;
+    qDebug() << "price : " << price;
+    qDebug() << "camion : " << truck;
 
-    // if(!query.exec()){
-    //     QMessageBox::critical(this, "SQLERROR", query.lastError().text());
-    // }
+    query.prepare("INSERT INTO Tournees VALUES (:name, :client, :price, :driver, :truck)");
+    query.bindValue(":name", name);
+    query.bindValue(":client", client);
+    query.bindValue(":price", price);
+    query.bindValue(":driver", driver);
+    query.bindValue(":truck", truck);
+
+    if(!query.exec()){
+        QMessageBox::critical(this, "SQLERROR", query.lastError().text());
+    }
 
     this->close();
-
-    qDebug() << "clicked";
 }
 
-void AddTournee::on_idChauffCombo_currentIndexChanged(const QString &arg1)
-{
-    return;
-}
+
 
 void AddTournee::fill_combo_box(){
 
@@ -99,3 +97,9 @@ void AddTournee::fill_truck_combo_box(){
 
     ui->truckCombo->insertItems(1,items);
 }
+
+void AddTournee::on_cancelBtn_clicked()
+{
+    this->close();
+}
+

@@ -23,6 +23,8 @@ public:
 private slots:
     void on_addTourBtn_clicked();
 
+    void on_cancelBtn_clicked();
+
 private:
     Ui::AddTournee *ui;
 

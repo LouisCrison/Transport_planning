@@ -46,7 +46,7 @@ void DisplayTournee::on_dltTourBtn_clicked()
 
     name = ui->dispTourTable->model()->index(row, 0).data().toString();
 
-    query.prepare("DELETE FROM Tournees WHERE nom = :name");
+    query.prepare("DELETE FROM Tournees WHERE name = :name");
     query.bindValue(":name", name);
     if(!query.exec()){
         QMessageBox::critical(this,"SQL ERROR", query.lastError().text());
