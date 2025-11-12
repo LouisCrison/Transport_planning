@@ -39,6 +39,7 @@ add_executable(Transport_planning
     source/main.cpp
     source/mainwindow.cpp
     source/addchauffeur.cpp
+    source/addcamion.cpp
     source/displaychauffeurs.cpp
     source/displaycamions.cpp
     source/displaytournee.cpp
@@ -50,11 +51,14 @@ add_executable(Transport_planning
 
     headers/mainwindow.h
     headers/addchauffeur.h
+    headers/addcamion.h
+    headers/addtournee.h
+    headers/addevent.h
+    headers/addclient.h
+    headers/addclient.h
     headers/displaychauffeurs.h
     headers/displaycamions.h
     headers/displaytournee.h
-    headers/addtournee.h
-    headers/addevent.h
     headers/databasesingleton.h
     headers/addclient.h
     headers/displayclient.h
@@ -62,6 +66,7 @@ add_executable(Transport_planning
     forms/addevent.ui
     forms/addchauffeur.ui
     forms/addtournee.ui
+    forms/addcamion.ui
     forms/displaycamions.ui
     forms/displaychauffeurs.ui
     forms/displaytournee.ui

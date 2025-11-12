@@ -35,3 +35,11 @@ void DisplayCamions::update_table(){
 
     ui->dispCamionsTable->setModel(model);
 }
+
+void DisplayCamions::on_addCamionBtn_clicked()
+{
+    AddCamion* addT = new AddCamion(this);
+    addT->exec();
+    update_table();
+}
+

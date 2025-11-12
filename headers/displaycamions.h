@@ -2,6 +2,7 @@
 #define DISPLAYCAMIONS_H
 
 #include "databasesingleton.h"
+#include "addcamion.h"
 
 #include <QDialog>
 #include <QSqlTableModel>
@@ -21,6 +22,9 @@ class DisplayCamions : public QDialog
 public:
     explicit DisplayCamions(QWidget *parent = nullptr);
     ~DisplayCamions();
+
+private slots:
+    void on_addCamionBtn_clicked();
 
 private:
     Ui::DisplayCamions *ui;
