@@ -10,6 +10,7 @@
 #include <QRegularExpressionValidator>
 #include <QRegularExpression>
 #include <QMessageBox>
+#include <QSqlError>
 
 namespace Ui {
 class AddCamion;

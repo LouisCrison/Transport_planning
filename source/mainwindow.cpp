@@ -38,7 +38,6 @@ void MainWindow::on_camionsButton_clicked()
     DisplayCamions* camDisp = new DisplayCamions(this);
     qDebug() << "clicked on Camions";
     camDisp->exec();
-    update_tables();
 }
 
 void MainWindow::on_chauffeursButton_clicked()
@@ -59,7 +58,7 @@ void MainWindow::on_tourneesButton_clicked()
 
 void MainWindow::on_clientsButton_clicked()
 {
-    DisplayClient* dispC = new DisplayClient();
+    DisplayClient* dispC = new DisplayClient(this);
     dispC->exec();
 }
 

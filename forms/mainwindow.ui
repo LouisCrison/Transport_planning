@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>956</width>
-    <height>550</height>
+    <width>1429</width>
+    <height>1101</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tourneeTab">
        <attribute name="title">
@@ -27,8 +27,14 @@
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QTableWidget" name="tourneeTable">
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
           </property>
           <property name="selectionMode">
            <enum>QAbstractItemView::ExtendedSelection</enum>
@@ -102,7 +108,7 @@
             <second>0</second>
             <year>2025</year>
             <month>9</month>
-            <day>28</day>
+            <day>27</day>
            </datetime>
           </property>
           <property name="displayFormat">
@@ -132,7 +138,7 @@
             <second>0</second>
             <year>2025</year>
             <month>10</month>
-            <day>28</day>
+            <day>27</day>
            </datetime>
           </property>
           <property name="displayFormat">
@@ -211,7 +217,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>956</width>
+     <width>1429</width>
      <height>22</height>
     </rect>
    </property>

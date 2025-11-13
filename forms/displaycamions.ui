@@ -19,7 +19,6 @@
      <property name="font">
       <font>
        <pointsize>20</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -32,7 +31,17 @@
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QTableView" name="dispCamionsTable"/>
+    <widget class="QTableView" name="dispCamionsTable">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+    </widget>
    </item>
    <item row="1" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
