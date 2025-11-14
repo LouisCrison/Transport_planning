@@ -2,6 +2,8 @@
 #define DATABASESINGLETON_H
 
 #include <QtSql/QSqlDatabase>
+#include <QMessageBox>
+#include <QSqlError>
 
 class DatabaseSingleton
 {

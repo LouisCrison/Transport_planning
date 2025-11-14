@@ -14,12 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     maindb = instance.get_db();
 
-    if(!maindb.open()){
-        QMessageBox::critical(this,"Error opening database",maindb.lastError().text());
-        return;
-    }
 
     update_tables();
+
+    ui->fromDateEdit->setDate(QDate(QDate::currentDate().year(), QDate::currentDate().month() , 1));
+    ui->toDateEdit->setDate(QDate(QDate::currentDate().year(), QDate::currentDate().month() , QDate::currentDate().daysInMonth()));
 
 }
 
@@ -101,8 +100,8 @@ void MainWindow::yellow_weekends(QDate& from_date){
         } else {
             color = Qt::white;
         }
-        for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){ // FIlling color in tournee table
-            if(ui->tourneeTable->item(i,j) == nullptr){
+        for(int j = 0 ; j < ui->tourneeTable->columnCount() ; j++){ // Filling color in tournee table
+            if(ui->tourneeTable->item(i,j) == nullptr){ // if no item is set
                 ui->tourneeTable->setItem(i,j,new QTableWidgetItem());
             }
             ui->tourneeTable->item(i,j)->setBackground(color);
@@ -212,7 +211,7 @@ void MainWindow::on_tourneeTable_doubleClicked(const QModelIndex &index)
     qDebug() << "double clicked";
 
     AddEvent* addev = new AddEvent(this);
-    addev->setDefaultDate(from_date.addDays(index.row()));
+    addev->set_default_date(from_date.addDays(index.row()));
     addev->exec();
 }
 
@@ -223,7 +222,11 @@ void MainWindow::on_chauffeurTable_doubleClicked(const QModelIndex &index)
     qDebug() << "double clicked";
 
     AddEvent* addev = new AddEvent(this);
-    addev->setDefaultDate(from_date.addDays(index.row()));
+    addev->set_default_date(from_date.addDays(index.row()));
+
+    QString driver = ui->chauffeurTable->horizontalHeaderItem(index.column())->text();
+
+    addev->set_driver(driver);
     addev->exec();
 }
 

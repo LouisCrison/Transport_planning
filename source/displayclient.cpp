@@ -32,13 +32,18 @@ void DisplayClient::on_addClientBtn_clicked()
 
 void DisplayClient::on_deleteClientBtn_clicked()
 {
-    int result = QMessageBox::warning(this, "Supprimer un Client", "Voulez vous vraiment supprimer ce client ?", QMessageBox::Yes | QMessageBox::No);
+    int result = QMessageBox::question(this, "Supprimer un Client", "Voulez vous vraiment supprimer ce client ?", "Oui", "Non");
 
-    if (result == QMessageBox::No){
+    if (result == 1){
         return;
     }
 
-    int row = ui->clientTableView->selectionModel()->selectedRows().first().row();
+    QModelIndexList selection = ui->clientTableView->selectionModel()->selectedRows();
+    if(selection.size() == 0){
+        return;
+    }
+
+    int row = selection.first().row();
 
     QSqlQuery* query =new QSqlQuery(main_db);
 

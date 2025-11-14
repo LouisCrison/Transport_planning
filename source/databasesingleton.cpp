@@ -5,7 +5,9 @@
 DatabaseSingleton::DatabaseSingleton() {
     main_db = QSqlDatabase::addDatabase("QSQLITE");
     main_db.setDatabaseName("main_database.db");
-    main_db.open();
+    if(!main_db.open()){
+        QMessageBox::critical(nullptr, "Erreur base de données", main_db.lastError().text());
+    }
 }
 
 

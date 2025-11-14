@@ -10,6 +10,8 @@
 #include <QDebug>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QDebug>
+#include <QMessageBox>
 
 namespace Ui {
 class DisplayCamions;
@@ -25,6 +27,8 @@ public:
 
 private slots:
     void on_addCamionBtn_clicked();
+
+    void on_dltCamionBtn_clicked();
 
 private:
     Ui::DisplayCamions *ui;

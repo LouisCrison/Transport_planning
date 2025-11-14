@@ -27,6 +27,8 @@ public:
 private slots:
     void on_addTruckBtn_clicked();
 
+    void on_cancelBtn_clicked();
+
 private:
     Ui::AddCamion *ui;
 

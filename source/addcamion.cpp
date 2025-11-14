@@ -50,3 +50,9 @@ void AddCamion::on_addTruckBtn_clicked()
 
 }
 
+
+void AddCamion::on_cancelBtn_clicked()
+{
+    this->close();
+}
+

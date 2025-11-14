@@ -38,10 +38,21 @@ void DisplayTournee::on_addTourBtn_clicked()
 
 void DisplayTournee::on_dltTourBtn_clicked()
 {
+    int result = QMessageBox::warning(this, "Supprimer une Tournée", "Voulez vous vraiment supprimer cette tournée?", QMessageBox::Yes | QMessageBox::No);
+
+    if (result == QMessageBox::No){
+        return;
+    }
+
+
     QString name;
     QSqlQuery query = QSqlQuery(maindb);
 
-    int row = ui->dispTourTable->selectionModel()->selectedRows().first().row();
+    QModelIndexList selection = ui->dispTourTable->selectionModel()->selectedRows();
+    if(selection.size() == 0){
+        return;
+    }
+    int row = selection.first().row();
 
 
     name = ui->dispTourTable->model()->index(row, 0).data().toString();

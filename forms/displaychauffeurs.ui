@@ -22,7 +22,6 @@
      <property name="font">
       <font>
        <pointsize>20</pointsize>
-       <weight>75</weight>
        <italic>false</italic>
        <bold>true</bold>
       </font>
@@ -46,6 +45,9 @@ font:bold
     <widget class="QTableView" name="chauffTable">
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

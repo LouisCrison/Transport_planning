@@ -37,10 +37,20 @@ void DisplayChauffeurs::on_AddButton_clicked()
 
 void DisplayChauffeurs::on_DeleteButton_clicked()
 {
-    int id;
+    int result = QMessageBox::warning(this, "Supprimer une Tournée", "Voulez vous vraiment supprimer cette tournée?", QMessageBox::Yes | QMessageBox::No);
+
+    if (result == QMessageBox::No){
+        return;
+    }
+
     QSqlQuery query = QSqlQuery(maindb);
 
-    int row = ui->chauffTable->selectionModel()->selectedRows().first().row();
+    QModelIndexList selection = ui->chauffTable->selectionModel()->selectedRows();
+
+    if (selection.size() == 0){
+        return;
+    }
+    int row = selection.first().row();
 
 
     QString name = ui->chauffTable->model()->index(row, 0).data().toString();
