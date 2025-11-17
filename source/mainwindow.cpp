@@ -77,7 +77,6 @@ void MainWindow::create_tables(){
     if(!query.exec("CREATE TABLE IF NOT EXISTS Clients (name TEXT PRIMARY KEY, city TEXT)")){
         QMessageBox::critical(this, "Erreur SQL creating client", query.lastError().text());
     }
-
 }
 
 
@@ -91,9 +90,9 @@ void MainWindow::yellow_weekends(QDate& from_date){
 
     for(int i = 0 ; i < ui->chauffeurTable->rowCount() ; i++){ // Going through rows
         ui->chauffeurTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd"))); // Writing the day in first column
-        ui->tourneeTable->setItem(i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));   // In both tables
+        ui->tourneeTable->setItem  (i,0,new QTableWidgetItem(locale.toString(buffer,"dddd")));   // In both tables
         ui->chauffeurTable->item(i,0)->setFont(font);
-        ui->tourneeTable->item(i,0)->setFont(font);
+        ui->tourneeTable->item  (i,0)->setFont(font);
         QBrush color;
         if (buffer.dayOfWeek()>5){ // if it's a weekend day
             color = Qt::yellow;
@@ -123,9 +122,7 @@ void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
     QDate buffer = from_date;
     // Fill the labels string list
     for(int i = 0 ; i < from_date.daysTo(to_date)+1; i++){
-        char sbuffer[11];
-        sprintf(sbuffer, "%02d/%02d/%04d", buffer.day(), buffer.month(), buffer.year());
-        labels << sbuffer;
+        labels << buffer.toString("dd/MM/yyyy");
         buffer = buffer.addDays(1);
     }
 
@@ -137,16 +134,15 @@ void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
 
     // COLUMNS
     // Retrieving column labels
-    query.exec("SELECT surname, name FROM Chauffeurs");
+    query.exec("SELECT surname, name, full_name FROM Chauffeurs");
     labels.clear();
     int colNum = 1;
     labels << "Jour";
     while(query.next()){
         labels  << query.value(0).toString() + " " + query.value(1).toString()[0] + ".";
-        drivers << query.value(0).toString() + " " + query.value(1).toString();
+        drivers << query.value(2).toString();
         colNum++;
     }
-
 
     ui->chauffeurTable->setColumnCount(colNum);
     ui->chauffeurTable->setHorizontalHeaderLabels(labels);
