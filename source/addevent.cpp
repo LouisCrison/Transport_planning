@@ -31,7 +31,7 @@ void AddEvent::fill_driver_combo(){
     list << "";
 
     while(query.next()){
-        list << query.value("surname").toString() + " " + query.value("name").toString()[0] + ".";
+        list << query.value("surname").toString() + " " + query.value("name").toString();
     }
 
     ui->driverCombo->insertItems(0, list);
@@ -75,30 +75,22 @@ void AddEvent::set_default_date(QDate date){
     ui->dateEdit->setDate(date);
 }
 
-void AddEvent::set_driver(QString driver){ // Driver given in format "name surname"
-    QSqlQuery query = QSqlQuery(maindb);
-    qDebug() << "driver : " << driver;
+void AddEvent::set_driver(QString driver){ // Driver given in format "surname name"
 
+    ui->driverCombo->setCurrentText(driver); // Needs to be passed as "surname name"
+    qDebug() << "setting driver to " << driver;
 
-    query.prepare("SELECT name, surname FROM Chauffeurs WHERE name || ' ' || surname = :driver");
-    query.bindValue(":driver", driver);
-    query.exec();
+    ui->driverCombo->setEnabled(false);
 
-    qDebug() << query.size();
-    query.next();
-
-
-    QString full_name = query.value(1).toString() + " " + query.value(0).toString()[0] + ".";
-
-
-    ui->driverCombo->setCurrentText(full_name); // Needs to be passed as "surname n."
-    qDebug() << "setting driver to " << full_name;
     return;
 }
 
 
-void AddEvent::set_tour(QDate date){
-    ui->dateEdit->setDate(date);
+void AddEvent::set_tour(QString tour){
+    // ui->dateEdit->setDate(date);
+    ui->tourCombo->setCurrentText(tour);
+    ui->tourCombo->setEnabled(false);
+    return;
 }
 
 
@@ -106,3 +98,27 @@ AddEvent::~AddEvent()
 {
     delete ui;
 }
+
+void AddEvent::on_validBtn_clicked()
+{
+    QSqlQuery query = QSqlQuery(maindb);
+
+    QString tour   = ui->tourCombo->currentText();
+    QString date   = ui->dateEdit->date().toString(Qt::ISODate);
+    QString driver = ui->driverCombo->currentText();
+    QString immat  = ui->truckCombo->currentText();
+
+    query.prepare("INSERT INTO Events (tour, date, driver, truck) VALUES (:tour, :date, :driver, :immat)");
+
+    query.bindValue(":tour",   tour);
+    query.bindValue(":date",   date);
+    query.bindValue(":driver", driver);
+    query.bindValue(":immat",  immat);
+
+    if(!query.exec()){
+        QMessageBox::critical(this, "SQL Error", query.lastError().text());
+    }
+
+    this->close();
+}
+

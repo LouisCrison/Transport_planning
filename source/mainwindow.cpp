@@ -119,6 +119,7 @@ void MainWindow::yellow_weekends(QDate& from_date){
 void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
     //get dates
     QStringList labels;
+    drivers.clear();
     QDate buffer = from_date;
     // Fill the labels string list
     for(int i = 0 ; i < from_date.daysTo(to_date)+1; i++){
@@ -136,12 +137,13 @@ void MainWindow::update_chauffeurs(QDate& from_date, QDate& to_date){
 
     // COLUMNS
     // Retrieving column labels
-    query.exec("SELECT name,surname FROM Chauffeurs");
+    query.exec("SELECT surname, name FROM Chauffeurs");
     labels.clear();
     int colNum = 1;
     labels << "Jour";
     while(query.next()){
-        labels  << query.value(0).toString().append(" ").append(query.value(1).toString());
+        labels  << query.value(0).toString() + " " + query.value(1).toString()[0] + ".";
+        drivers << query.value(0).toString() + " " + query.value(1).toString();
         colNum++;
     }
 
@@ -185,6 +187,34 @@ void MainWindow::update_tournees(QDate& from_date, QDate& to_date){
     ui->tourneeTable->setHorizontalHeaderLabels(labels);
 }
 
+void MainWindow::update_data_chauff(QDate &from_date){
+    QSqlQuery query = QSqlQuery(maindb);
+
+    for (int i = 0 ; i < ui->chauffeurTable->rowCount() ; i++){
+        QDate date = from_date.addDays(i);
+        for (int j = 1 ; j < ui->chauffeurTable->columnCount() ; j++){
+            QString driver = drivers[j-1];
+
+            query.prepare("SELECT tour FROM Events WHERE date = :date AND driver = :driver");
+            query.bindValue(":date", date.toString(Qt::ISODate));
+            query.bindValue(":driver", driver);
+
+            if(!query.exec()){
+                QMessageBox::critical(this, "SQLError", query.lastError().text());
+            }
+
+            if (query.next()){
+                ui->chauffeurTable->item(i,j)->setTextAlignment(Qt::AlignCenter);
+                ui->chauffeurTable->item(i,j)->setText(query.value(0).toString());
+            }
+        }
+    }
+}
+
+void MainWindow::update_data_tour(QDate &from_date){
+
+}
+
 void MainWindow::update_tables(){
     QDate from_date = ui->fromDateEdit->date();
     QDate to_date = ui->toDateEdit->date();
@@ -193,6 +223,8 @@ void MainWindow::update_tables(){
     update_tournees(from_date, to_date);
 
     yellow_weekends(from_date);
+
+    update_data_chauff(from_date);
 }
 
 void MainWindow::on_fromDateEdit_userDateChanged(const QDate &date)
@@ -203,6 +235,7 @@ void MainWindow::on_fromDateEdit_userDateChanged(const QDate &date)
 void MainWindow::on_toDateEdit_userDateChanged(const QDate &date)
 {
     update_tables();
+    // ui->fromDateEdit->setMinimumDate(ui->toDateEdit->date().addDays(-60));
 }
 
 void MainWindow::on_tourneeTable_doubleClicked(const QModelIndex &index)
@@ -212,7 +245,13 @@ void MainWindow::on_tourneeTable_doubleClicked(const QModelIndex &index)
 
     AddEvent* addev = new AddEvent(this);
     addev->set_default_date(from_date.addDays(index.row()));
+
+    QString tour = ui->tourneeTable->horizontalHeaderItem(index.column())->text();
+    addev->set_tour(tour);
+
     addev->exec();
+
+    update_tables();
 }
 
 
@@ -224,10 +263,12 @@ void MainWindow::on_chauffeurTable_doubleClicked(const QModelIndex &index)
     AddEvent* addev = new AddEvent(this);
     addev->set_default_date(from_date.addDays(index.row()));
 
-    QString driver = ui->chauffeurTable->horizontalHeaderItem(index.column())->text();
+    QString driver = drivers[index.column() - 1];
 
     addev->set_driver(driver);
     addev->exec();
+
+    update_tables();
 }
 
 

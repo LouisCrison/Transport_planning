@@ -55,10 +55,14 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSqlDatabase maindb;
+    QStringList drivers;
+
     void create_tables();
     void update_tables();
     void yellow_weekends(QDate& from_date);
     void update_tournees(QDate& from_date, QDate& to_date);
     void update_chauffeurs(QDate& from_date, QDate& to_date);
+    void update_data_tour(QDate& from_date);
+    void update_data_chauff(QDate& from_date);
 };
 #endif // MAINWINDOW_H

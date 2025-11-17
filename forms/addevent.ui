@@ -64,7 +64,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QComboBox" name="driverCombo"/>
+    <widget class="QComboBox" name="driverCombo">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="label_5">

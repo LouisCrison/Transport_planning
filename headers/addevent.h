@@ -26,7 +26,10 @@ public:
 
     void set_default_date(QDate date);
     void set_driver(QString driver);
-    void set_tour(QDate date);
+    void set_tour(QString tour);
+
+private slots:
+    void on_validBtn_clicked();
 
 private:
     Ui::AddEvent *ui;
