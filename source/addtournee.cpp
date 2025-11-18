@@ -32,8 +32,9 @@ void AddTournee::on_addTourBtn_clicked()
     qDebug() << "name : " << name;
     qDebug() << "price : " << price;
     qDebug() << "camion : " << truck;
+    qDebug() << "driver : " << driver;
 
-    query.prepare("INSERT INTO Tournees VALUES (:name, :client, :price, :driver, :truck)");
+    query.prepare("INSERT INTO Tournees (name, client, price, driver, truck) VALUES (:name, :client, :price, :driver, :truck)");
     query.bindValue(":name", name);
     query.bindValue(":client", client);
     query.bindValue(":price", price);
@@ -60,25 +61,25 @@ void AddTournee::fill_driver_combo_box(){
     QStringList items;
     QSqlQuery query = QSqlQuery(maindb);
 
-    query.exec("SELECT * FROM Chauffeurs");
-    ui->chauffCombo->insertItem(0,"N/A");
+    query.exec("SELECT full_name FROM Chauffeurs");
+    items << "";
 
     while(query.next()){
-        items << query.value(0).toString().append(" ").append(query.value(1).toString());
+        items << query.value(0).toString();
     }
 
-    ui->chauffCombo->insertItems(1,items);
+    ui->chauffCombo->insertItems(0,items);
 }
 
 void AddTournee::fill_client_combo_box(){
     QStringList items;
     QSqlQuery query = QSqlQuery(maindb);
 
-    query.exec("SELECT * FROM Clients");
-    ui->clientCombo->insertItem(0,"N/A");
+    query.exec("SELECT name FROM Clients");
+    ui->clientCombo->insertItem(0,"");
 
     while(query.next()){
-        items << query.value(0).toString().append(" ").append(query.value(1).toString());
+        items << query.value(0).toString();
     }
 
     ui->clientCombo->insertItems(1,items);
@@ -89,7 +90,7 @@ void AddTournee::fill_truck_combo_box(){
     QSqlQuery query = QSqlQuery(maindb);
 
     query.exec("SELECT * FROM Trucks");
-    ui->truckCombo->insertItem(0,"N/A");
+    ui->truckCombo->insertItem(0,"");
 
     while(query.next()){
         items << query.value(0).toString();

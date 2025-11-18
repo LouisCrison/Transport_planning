@@ -4,6 +4,7 @@
 #include <QtSql/QSqlDatabase>
 #include <QMessageBox>
 #include <QSqlError>
+#include <QSqlQuery>
 
 class DatabaseSingleton
 {

@@ -8,6 +8,8 @@ DatabaseSingleton::DatabaseSingleton() {
     if(!main_db.open()){
         QMessageBox::critical(nullptr, "Erreur base de données", main_db.lastError().text());
     }
+    QSqlQuery query = QSqlQuery(main_db);
+    query.exec("PRAGMA foreign_keys = ON;");
 }
 
 
