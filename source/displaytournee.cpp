@@ -19,12 +19,18 @@ DisplayTournee::~DisplayTournee()
 
 void DisplayTournee::update_table(){
 
-    QSqlTableModel* model = new QSqlTableModel(this,maindb);
+    QSqlRelationalTableModel* model = new QSqlRelationalTableModel(this,maindb);
+    model->setJoinMode(QSqlRelationalTableModel::LeftJoin);
 
     model->setTable("Tournees");
+    model->setRelation(model->fieldIndex("driver"), QSqlRelation("Chauffeurs", "full_name", "full_name"));
     model->select();
 
+
     ui->dispTourTable->setModel(model);
+    ui->dispTourTable->setItemDelegate(new QSqlRelationalDelegate(ui->dispTourTable));
+
+    ui->dispTourTable->setItemDelegateForColumn(3, new TourneesRelationalDelegate(this));
 
     ui->dispTourTable->setSelectionBehavior(QAbstractItemView::SelectRows);
 }
@@ -65,3 +71,5 @@ void DisplayTournee::on_dltTourBtn_clicked()
 
     update_table();
 }
+
+

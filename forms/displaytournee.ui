@@ -40,6 +40,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="modifyBtn">
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -56,6 +63,9 @@
    </item>
    <item row="1" column="0">
     <widget class="QTableView" name="dispTourTable">
+     <property name="editTriggers">
+      <set>QAbstractItemView::DoubleClicked</set>
+     </property>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>

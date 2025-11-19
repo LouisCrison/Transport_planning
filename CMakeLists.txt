@@ -46,6 +46,7 @@ add_executable(Transport_planning
     source/addtournee.cpp
     source/addevent.cpp
     source/databasesingleton.cpp
+    source/nullrelationaldelegate.cpp
     source/addclient.cpp
     source/displayclient.cpp
 
@@ -60,6 +61,7 @@ add_executable(Transport_planning
     headers/displaycamions.h
     headers/displaytournee.h
     headers/databasesingleton.h
+    headers/nullrelationaldelegate.h
     headers/addclient.h
     headers/displayclient.h
 

@@ -3,11 +3,14 @@
 
 #include "mainwindow.h"
 #include "addtournee.h"
+#include "nullrelationaldelegate.h"
 
 #include <QDialog>
 #include <QSqlDatabase>
 #include <QDebug>
 #include <QSqlTableModel>
+#include <QSqlRelationalTableModel>
+#include <QSqlRelationalDelegate>
 
 namespace Ui {
 class DisplayTournee;
@@ -30,6 +33,7 @@ private slots:
 private:
     Ui::DisplayTournee *ui;
     QSqlDatabase maindb;
+    QComboBox driverBox;
 };
 
 #endif // DISPLAYTOURNEE_H
