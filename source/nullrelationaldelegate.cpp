@@ -20,7 +20,10 @@ void TourneesRelationalDelegate::setModelData(QWidget *editor, QAbstractItemMode
 
     QComboBox* cb = qobject_cast<QComboBox*>(editor);
 
-    QVariant driver = cb->currentData();
+    int row = cb->currentIndex();
+    QVariant driver = cb->itemData(row, Qt::EditRole);
+
+    qDebug() << "comboBox 3 : " << cb->itemText(3);
 
     qDebug() << driver.toString();
 
@@ -36,4 +39,6 @@ void TourneesRelationalDelegate::setModelData(QWidget *editor, QAbstractItemMode
     query.bindValue(":driver",driver);
     query.bindValue(":name",name);
     query.exec();
+
+    qobject_cast<QSqlTableModel*>(model)->select();
 }
